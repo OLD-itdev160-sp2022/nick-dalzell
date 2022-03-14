@@ -7,19 +7,19 @@
             description: 'Emmet is the number one code snippet tool',
             author: 'emmetio',
             url: 'https://atom.io/packages/emmet',
-            downloads: 20000000,
-            stars: 4000,
-            price: 50.50,
+            downloads: 4761965,
+            stars: 2927,
+            price: 0,
             selector: 'p1'
         },
         {
             name: 'atom-beautify',
-            description: 'added later',
+            description: 'beautify your code',
             author: 'Glavin001',
             url: 'https://atom.io/packages/atom-beautify',
-            downloads:500000,
-            stars:5000,
-            price:6.75,
+            downloads: 9134431,
+            stars: 5492,
+            price:0,
             selector: 'p2'
         }
     ];
@@ -34,6 +34,7 @@
         this.selector = data.selector;
 
         this.getFormattedDownloads = function () {
+            console.log(this.downloads, this);
             return this.downloads.toLocaleString();
         };
 
@@ -61,9 +62,9 @@
 
         nameEl.textContent = package.name;
         descEl.textContent = package.description;
-        authEl.textContent = package.author;
-        downloadEl.textContent = package.getFormattedDownloads();
-        starsEl.textContent = package.getFormattedStars();
+        authEl.textContent = 'Author: ' + package.author;
+        downloadEl.textContent = 'Downloads: ' + package.getFormattedDownloads();
+        starsEl.textContent = 'Stars: ' + package.getFormattedStars();
     }
 
     dateEl = getEl('date');
